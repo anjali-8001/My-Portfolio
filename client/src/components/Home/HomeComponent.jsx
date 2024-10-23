@@ -21,7 +21,7 @@ const HomeComponent = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text, delta, tick]);
+  }, [text, delta]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -64,7 +64,7 @@ const HomeComponent = () => {
           ANJALI SHARMA
         </h1>
         <p className="text-4xl font-bold text-[#E0E6ED]">
-          I'm a{" "}
+          I&apos;m a{" "}
           <span
             className=""
             style={{
