@@ -73,7 +73,7 @@ const SKills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-           <span className="text-[#007BFF]">Technologies</span>  I'm Using
+           <span className="text-[#007BFF]">Technologies</span>  I&apos;m Using
           </motion.h2>
 
           <motion.p

@@ -130,7 +130,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <p>
-                I'm Anjali, a recent B.Tech graduate in{" "}
+                I&apos;m Anjali, a recent B.Tech graduate in{" "}
                 <span className="text-[#007BFF]">
                   Computer Science Engineering
                 </span>{" "}
@@ -241,7 +241,7 @@ const About = () => {
                     <div className="flex items-center justify-between text-lg gap-10">
                       <div className="flex items-center gap-2">
                         <SlCalender />
-                        <p className="">May'24 - Oct'24</p>
+                        <p className="">May&apos;24 - Oct&apos;24</p>
                       </div>
                       <div className="flex gap-1 items-center">
                         <IoLocationOutline />
@@ -255,7 +255,7 @@ const About = () => {
                     <div className="flex items-center justify-between text-lg gap-10">
                       <div className="flex items-center gap-2">
                         <SlCalender />
-                        <p className="">Jan'24 - Feb'24</p>
+                        <p className="">Jan&apos;24 - Feb&apos;24</p>
                       </div>
                       <div className="flex gap-1 items-center">
                         <IoLocationOutline />
