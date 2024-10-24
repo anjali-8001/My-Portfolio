@@ -9,7 +9,7 @@ import { IoIosCloudDownload } from "react-icons/io";
 import Link from "next/link";
 
 const About = () => {
-  const [selectedButton, setSelectedButton] = useState("personal");
+  const [selectedButton, setSelectedButton] = useState("education");
 
   // Animation Variants
   const containerVariants = {
@@ -161,21 +161,21 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex gap-12">
-                <div class="h-[360px] w-[1px] bg-white relative ml-12">
+              <div className="flex lg:gap-12 sm:gap-8 gap-6">
+                <div class="lg:h-[360px] sm:h-[280px] h-[240px] w-[1px] bg-white relative xl:ml-12 ml-2">
                   <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
-                  <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] top-[205px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+                  <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] lg:top-[205px] sm:top-[165px] top-[162px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                 </div>
-                <div className="flex flex-col gap-16 items-start">
-                  <div className="text-xl font-medium flex flex-col gap-3">
+                <div className="flex flex-col lg:gap-16 sm:gap-10 gap-8 items-start">
+                  <div className="lg:text-xl sm:text-base text-sm font-medium flex flex-col gap-3">
                     <p className="font-semibold text-[#007BFF]">
                       Dr. Akhilesh Das Gupta Institute of Professional Studies
                       <p className="text-[#007BFF]">(Affiliated to GGSIPU)</p>
                     </p>
-                    <p className="text-lg">
+                    <p className="lg:text-lg sm:text-base text-sm">
                       BTech in Computer Science Engineering
                     </p>
-                    <div className="flex items-center justify-between text-lg gap-2">
+                    <div className="flex items-center justify-between lg:text-lg sm:text-base text-sm gap-2">
                       <div className="flex items-center gap-2">
                         <SlCalender />
                         <p className="">2020-2024</p>
@@ -186,12 +186,14 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-xl font-medium flex flex-col gap-3 w-full">
+                  <div className="lg:text-xl sm:text-base text-sm font-medium flex flex-col gap-3 w-full">
                     <p className="font-semibold text-[#007BFF]">
                       Modern Delhi Public School
                     </p>
-                    <p className="text-lg">Senior Seconday</p>
-                    <div className="flex items-center justify-between text-lg gap-2">
+                    <p className="lg:text-lg sm:text-base text-sm">
+                      Senior Seconday
+                    </p>
+                    <div className="flex items-center justify-between lg:text-lg sm:text-base text-sm gap-2">
                       <div className="flex items-center gap-2">
                         <SlCalender />
                         <p className="">2018-2020</p>
@@ -215,18 +217,20 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex gap-12 ">
-                <div class="h-[360px] w-[1px] bg-white relative ml-12">
+              <div className="flex lg:gap-12 sm:gap-8 gap-6 ">
+                <div class="lg:h-[360px] sm:h-[280px] h-[200px] w-[1px] bg-white relative xl:ml-12 ml-2">
                   <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
-                  <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] top-[175px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+                  <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] lg:top-[175px] sm:top-[145px] top-[122px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                 </div>
-                <div className="flex flex-col gap-16 items-start ">
-                  <div className="text-xl font-medium flex flex-col gap-3">
+                <div className="flex flex-col lg:gap-16 sm:gap-10 gap-8 items-start ">
+                  <div className="lg:text-xl sm:text-base text-sm font-medium flex flex-col gap-3">
                     <p className="font-semibold text-[#007BFF]">
                       SkyTrust IT Solutions
                     </p>
-                    <p className="text-lg">Full Stack Developer Intern</p>
-                    <div className="flex items-center justify-between text-lg gap-10">
+                    <p className="lg:text-lg sm:text-base text-sm">
+                      Full Stack Developer Intern
+                    </p>
+                    <div className="flex items-center justify-between lg:text-lg sm:text-base text-sm gap-10">
                       <div className="flex items-center gap-2">
                         <SlCalender />
                         <p className="">May&apos;24 - Oct&apos;24</p>
@@ -237,10 +241,12 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-xl font-medium flex flex-col gap-3 w-full">
+                  <div className="lg:text-xl sm:text-base text-sm font-medium flex flex-col gap-3 w-full">
                     <p className="font-semibold text-[#007BFF]">BeatStore</p>
-                    <p className="text-lg">Backend Developer Intern</p>
-                    <div className="flex items-center justify-between text-lg gap-10">
+                    <p className="lg:text-lg sm:text-base text-sm">
+                      Backend Developer Intern
+                    </p>
+                    <div className="flex items-center justify-between lg:text-lg sm:text-base text-sm gap-10">
                       <div className="flex items-center gap-2">
                         <SlCalender />
                         <p className="">Jan&apos;24 - Feb&apos;24</p>

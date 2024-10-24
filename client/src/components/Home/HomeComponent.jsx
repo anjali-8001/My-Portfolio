@@ -49,7 +49,7 @@ const HomeComponent = () => {
       initial={{ opacity: 0 }}
       animate={{ scale: [0, 1], opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="w-full h-[100vh] flex justify-center items-center lg:px-32 sm:px-16 px-8"
+      className="w-full h-[100vh] flex justify-center items-center lg:px-32 sm:px-16 px-8 py-0 mt-0"
     >
       <div className="flex flex-col items-center justify-center lg:gap-5 sm:gap-3 gap-2">
         <p className="lg:text-2xl sm:text-xl text-lg">Hi This is</p>

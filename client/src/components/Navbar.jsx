@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <>
       <motion.div
-        className="flex justify-center items-center bg-techy-gradient px-5 py-3 rounded-xl sticky top-4 w-fit self-center mx-4 backdrop-blur-sm shadow-md border border-[#183b60] z-[400]"
+        className="flex justify-center items-center bg-techy-gradient px-5 py-3 rounded-xl fixed top-4 w-fit self-center mx-4 backdrop-blur-sm shadow-md border border-[#183b60] z-[400]"
         initial={{ opacity: 0, scaleX: 0 }} // Initial state for animation
         animate={{ opacity: 1, scaleX: 1 }} // Final state for animation
         exit={{ opacity: 0, scaleX: 0 }} // State when exiting
