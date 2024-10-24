@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-5 w-full px-24  py-10">
+    <div className="flex flex-col sm:gap-5 gap-3 w-full lg:px-28 sm:px-14 px-6 lg:py-10 sm:py-8 py-6 lg:text-lg sm:text-sm text-xs">
       <hr />
-      <div className="flex justify-between items-center">
+      <div className="flex sm:flex-row flex-col justify-between items-center gap-2">
         <div className="flex flex-col gap-4">
           <p className="" style={{
               background: "linear-gradient(135deg, #00BFFF, #87CEEB, #00FFFF)",
@@ -32,14 +32,14 @@ const Footer = () => {
           </span>
         </p>
 
-        <div className="flex  items-center gap-6 py-6">
+        <div className="flex items-center lg:gap-6 gap-3 sm:py-6 py-3">
           <motion.a
             href="https://www.linkedin.com/in/anjali-sharma-4086831b9/"
             className=""
             whileHover={{ scale: 1.1 }}
             target="_blank"
           >
-            <CiLinkedin className="w-7 h-auto" />
+            <CiLinkedin className="sm:w-7 w-5 h-auto" />
           </motion.a>
           <motion.a
             href="https://github.com/anjali-8001"
@@ -47,7 +47,7 @@ const Footer = () => {
             whileHover={{ scale: 1.1 }}
             target="_blank"
           >
-            <FaGithub className="w-6 h-auto" />
+            <FaGithub className="sm:w-6 w-4 h-auto" />
           </motion.a>{" "}
           <motion.a
             href="https://leetcode.com/u/anjali_8001/"
@@ -55,7 +55,7 @@ const Footer = () => {
             whileHover={{ scale: 1.1 }}
             target="_blank"
           >
-            <SiLeetcode className="w-6 h-auto" />
+            <SiLeetcode className="sm:w-6 w-4 h-auto" />
           </motion.a>{" "}
           <motion.a
             href="mailto:anjalisharma8001@gmail.com"
@@ -63,7 +63,7 @@ const Footer = () => {
             whileHover={{ scale: 1.1 }}
             target="_blank"
           >
-            <LuMail className="w-6 h-auto" />
+            <LuMail className="sm:w-6 w-4 h-auto" />
           </motion.a>
         </div>
       </div>

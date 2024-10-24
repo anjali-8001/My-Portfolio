@@ -18,7 +18,7 @@ import { RiShareBoxFill } from "react-icons/ri";
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
-  const projectsRow1 = [
+  const projects = [
     {
       title: "Ecommerce Website",
       desc: "This project is an e-commerce platform that delivers a seamless shopping experience.",
@@ -69,12 +69,12 @@ const Projects = () => {
 
   return (
     <div
-      className="py-32 w-full flex flex-col gap-32 h-auto px-32"
+      className="lg:p-32 sm:p-16 p-8  w-full flex flex-col lg:gap-32 sm:gap-16 gap-8 h-auto"
       id="projects"
     >
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col lg:gap-5 sm:gap-3 gap-1">
         <motion.h2
-          className="text-5xl font-bold py-2"
+          className="lg:text-5xl sm:text-3xl text-xl font-bold py-2"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -82,9 +82,9 @@ const Projects = () => {
           Personal Projects
         </motion.h2>
         <motion.hr
-          className="bg-[#00BFFF] border border-[#00BFFF] text-center w-72 rounded-2xl h-1"
+          className="bg-[#00BFFF] border border-[#00BFFF] text-center w-[100%] rounded-2xl h-1"
           initial={{ width: 0 }}
-          whileInView={{ width: "20rem" }}
+          whileInView={{ width: "100%" }}
           transition={{ duration: 0.5 }}
         />
       </div>
@@ -94,12 +94,12 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
       >
-        <div className="flex gap-14 justify-between items-center">
-          {projectsRow1?.map((project, index) => {
+        <div className="flex lg:gap-10 sm:gap-8 gap-6 justify-center flex-wrap items-center 2xl:w-[1500px]">
+          {projects?.map((project, index) => {
             return (
               <motion.div
                 key={index}
-                className={`relative flex flex-col gap-5 bg-gradient-to-b from-[#000000d9] to-[#14141e] w-[350px] rounded-2xl p-5 border-[3px] border-[#14141e] ${
+                className={`relative flex flex-col  lg:gap-5 sm:gap-4 gap-3 bg-gradient-to-b from-[#000000d9] to-[#14141e] lg:w-[350px] sm:w-[300px] w-[280px] rounded-2xl lg:p-5 p-4 border-[3px] border-[#14141e] ${
                   hoveredProject === index && "moving-border-project"
                 }`}
                 onMouseEnter={() => setHoveredProject(index)}
@@ -117,7 +117,7 @@ const Projects = () => {
                   alt="project"
                   className="w-full h-auto rounded-lg"
                 />
-                <motion.div className="text-xl font-semibold flex justify-between items-center w-full">
+                <motion.div className="lg:text-xl sm:text-lg text-base font-semibold flex justify-between items-center w-full">
                   <p className=""> {project.title}</p>
                   <div className="flex gap-4 items-center">
                     <motion.a
@@ -145,7 +145,7 @@ const Projects = () => {
                   {project?.tech?.map((tech, techIndex) => {
                     return (
                       <motion.div key={techIndex}>
-                        <Image src={tech} className="h-8 w-auto" alt="icon" />
+                        <Image src={tech} className="sm:h-8 h-6 w-auto" alt="icon" />
                       </motion.div>
                     );
                   })}

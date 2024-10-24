@@ -1,13 +1,30 @@
+"use client"
+import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import About from "@/components/Home/About";
 import Contact from "@/components/Home/Contact";
 import HomeComponent from "@/components/Home/HomeComponent";
-import Navbar from "@/components/Home/Navbar";
 import Projects from "@/components/Home/Projects";
 import SKills from "@/components/Home/SKills";
+import Loader from "@/components/Loader";
+import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer); 
+  }, []);
+
+  if (isLoading) {
+    return <Loader />; 
+  }
+
   return (
     <div
       className="flex flex-col gap-5 w-[100vw] h-[100%] relative"

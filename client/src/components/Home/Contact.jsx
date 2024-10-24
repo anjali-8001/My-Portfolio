@@ -40,15 +40,18 @@ const Contact = () => {
   };
 
   return (
-    <motion.div className="flex h-auto py-32 px-32 gap-24" id="contact">
+    <motion.div
+      className="flex lg:flex-row flex-col lg:justify-between justify-center items-center h-auto lg:p-32 sm:p-16 p-8 lg:gap-24 sm:gap-16 gap-10"
+      id="contact"
+    >
       <motion.div
         ref={ref}
-        className="flex flex-col gap-6 text-2xl w-[48%]"
+        className="flex flex-col lg:gap-6 sm:gap-4 gap-2 lg:w-[48%]  w-fit"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-5xl leading-[70px] mr-8 font-semibold">
+        <h1 className="lg:text-5xl sm:text-3xl text-xl lg:leading-[70px] sm:leading-10 lg mr-8 font-semibold">
           Let&apos;{" "}
           <span
             className=""
@@ -62,7 +65,7 @@ const Contact = () => {
           </span>
           . <p className="">Tell me about your project!</p>
         </h1>
-        <div className="text-[#7ea0c7] ">
+        <div className="text-[#7ea0c7] lg:text-2xl sm:text-xl text-base">
           Let&apos; create something together ✌️
         </div>
         <div className="flex gap-5 items-center">
@@ -76,16 +79,16 @@ const Contact = () => {
               </a>
             </div>
           </motion.div>
-          <div className="text-lg">
+          <div className="lg:text-lg sm:text-base text-sm">
             <p className="text-[#c4d3e4]">Mail me at:</p>
             <p className="text-[#c4d3e4]">anjalisharma8001@gmail.com</p>
           </div>
         </div>
       </motion.div>
 
-      <motion.div className="relative flex flex-col gap-5 w-[50%]">
+      <motion.div className="relative flex flex-col gap-5 lg:w-[50%] sm:w-[500px] w-[320px] justify-center items-center">
         <motion.div
-          className="absolute left-[100px] top-[50px]"
+          className="absolute lg:left-[100px] top-[50px]"
           initial={{ opacity: 1 }}
           animate={isVisible && { opacity: 0 }}
           transition={{ delay: 0.5, duration: 3 }}
@@ -95,6 +98,7 @@ const Contact = () => {
             height="100%"
             viewBox="0 0 32.666 32.666"
             fill="none"
+            className="lg:w-80 lg:h-80 sm:w-60 sm:h-60 w-40 h-40" 
             xmlns="http://www.w3.org/2000/svg"
           >
             <motion.path
@@ -124,9 +128,9 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 2.5, duration: 0.5 }}
-          className="flex flex-col gap-6 border border-[#007BFF] rounded-2xl z-30 p-10 w-full"
+          className="flex flex-col gap-6 border border-[#007BFF] rounded-2xl z-30 lg:p-10 sm:p-6 p-4 w-full lg:max-w-[600px]"
         >
-          <div className="text-2xl">Send me a message 🚀</div>
+          <div className="lg:text-2xl sm:text-xl text-lg">Send me a message 🚀</div>
           <form
             ref={formRef}
             onSubmit={sendEmail}
@@ -137,25 +141,25 @@ const Contact = () => {
               required
               placeholder="Enter your name"
               name="name"
-              className="text-sm rounded-lg px-6 py-4 bg-[#1C1F26] border border-[#007BFF] outline-none"
+              className="lg:text-sm text-xs rounded-lg lg:px-6 sm:px-5 px-3 lg:py-4 sm:py-3 py-2 bg-[#1C1F26] border border-[#007BFF] outline-none"
             />
             <motion.input
               type="email"
               required
               placeholder="Enter your email"
               name="email"
-              className="text-sm rounded-lg px-6 py-4 bg-[#1C1F26] border border-[#007BFF] outline-none"
+              className="lg:text-sm text-xs rounded-lg lg:px-6 sm:px-5 px-3 lg:py-4 sm:py-3 py-2 bg-[#1C1F26] border border-[#007BFF] outline-none"
             />
             <motion.textarea
               rows={4}
               required
               placeholder="Enter a message"
               name="message"
-              className="text-sm rounded-lg px-6 py-4 bg-[#1C1F26] border border-[#007BFF] outline-none"
+              className="lg:text-sm text-xs rounded-lg lg:px-6 sm:px-5 px-3 lg:py-4 sm:py-3 py-2 bg-[#1C1F26] border border-[#007BFF] outline-none"
             />
             <motion.button
               type="submit"
-              className="bg-[#007BFF] text-white font-bold text-lg py-3 rounded-lg transition-transform duration-300 hover:scale-105"
+              className="bg-[#007BFF] text-white font-bold lg:py-3 py-2  rounded-lg transition-transform duration-300 hover:scale-105 lg:text-xl sm:text-lg text-base "
               whileHover={{ scale: 1.03 }} // Enlarge button on hover
             >
               Send

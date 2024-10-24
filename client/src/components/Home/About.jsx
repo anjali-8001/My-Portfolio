@@ -1,19 +1,15 @@
-// // 20C997
-
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import about from "../../../public/assets/AboutMe.json";
 import Lottie from "lottie-react";
 import { SlCalender } from "react-icons/sl";
 import { IoLocationOutline } from "react-icons/io5";
-import { delay, motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { IoIosCloudDownload } from "react-icons/io";
 import Link from "next/link";
 
 const About = () => {
   const [selectedButton, setSelectedButton] = useState("personal");
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef); // Tracks visibility
 
   // Animation Variants
   const containerVariants = {
@@ -40,15 +36,15 @@ const About = () => {
       initial="hidden"
       whileInView="visible"
       variants={containerVariants}
-      ref={sectionRef}
-      className=" w-full flex flex-col py-20 h-[860px]"
+      // ref={sectionRef}
+      className=" w-full flex flex-col lg:py-20 sm:py-16 py-12 lg:px-32 sm:px-16 px-8 lg:gap-20 gap-10"
       id="about"
     >
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center lg:gap-3 sm:gap-2 gap-1">
         <motion.h2
-          className="text-center text-sm w-full"
+          className="text-center lg:text-sm text-xs w-full"
           initial={{ opacity: 0, y: -50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             type: "spring",
             stiffness: 50,
@@ -58,9 +54,9 @@ const About = () => {
           Get to know more{" "}
         </motion.h2>
         <motion.h2
-          className="text-center text-5xl w-full font-bold"
+          className="text-center lg:text-5xl sm:text-3xl text-xl w-full font-bold"
           initial={{ opacity: 0, y: -50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             type: "spring",
             stiffness: 50,
@@ -71,26 +67,26 @@ const About = () => {
           About Me
         </motion.h2>
         <motion.hr
-          className="bg-[#00BFFF] border border-[#00BFFF] text-center w-32 rounded-2xl h-1 mt-2"
+          className="bg-[#00BFFF] border border-[#00BFFF] text-center w-32 rounded-2xl h-1 lg:mt-2"
           initial={{ width: 0 }}
-          animate={isInView ? { width: "8rem" } : { width: 0 }}
+          animate={{ width: "8rem" }}
           transition={{ duration: 0.5 }}
         />
       </div>
 
       <motion.div
-        className="h-[100%] w-full flex justify-between gap-10"
+        className="h-[100%] w-full flex xl:flex-row  xl:justify-between flex-col justify-center items-center gap-20 relative"
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={"visible"}
         variants={containerVariants}
       >
-        <div className="w-[40%] flex justify-center items-center">
+        <div className="hidden sm:block xl:w-[40%] w-[200px] justify-center items-center xl:relative absolute top-[-30px] right-[-30px]">
           <Lottie animationData={about} loop={true} />
         </div>
-        <div className="w-[60%] flex flex-col gap-12 p-20">
-          <div className="flex gap-2 rounded-full border border-[#00BFFF] p-2 w-fit">
+        <div className="xl:w-[60%] w-full flex flex-col lg:gap-12 gap-6 ">
+          <div className="flex gap-2 rounded-full border border-[#00BFFF] lg:p-2 p-1 w-fit">
             <motion.button
-              className={`px-8 py-3 text-xl rounded-full font-bold ${
+              className={`lg:px-8 sm:px-4 px-2 lg:py-3 sm:py-2 py-1 lg:text-xl sm:text-base text-sm rounded-full font-bold ${
                 selectedButton === "personal" && "bg-[#00BFFF] text-[#4B4F59]"
               }`}
               onClick={() => setSelectedButton("personal")}
@@ -100,7 +96,7 @@ const About = () => {
               Personal Info
             </motion.button>
             <motion.button
-              className={`px-8 py-3 text-xl rounded-full font-bold ${
+              className={`lg:px-8 sm:px-4 px-2 lg:py-3 sm:py-2 py-1 lg:text-xl sm:text-base text-sm rounded-full font-bold ${
                 selectedButton === "education" && "bg-[#00BFFF] text-[#4B4F59]"
               }`}
               onClick={() => setSelectedButton("education")}
@@ -110,7 +106,7 @@ const About = () => {
               Education
             </motion.button>
             <motion.button
-              className={`px-8 py-3 text-xl rounded-full font-bold ${
+              className={`lg:px-8 sm:px-4 px-2 lg:py-3 sm:py-2 py-1 lg:text-xl sm:text-base text-sm rounded-full font-bold ${
                 selectedButton === "experience" && "bg-[#00BFFF] text-[#4B4F59]"
               }`}
               onClick={() => setSelectedButton("experience")}
@@ -124,7 +120,7 @@ const About = () => {
           {/* Personal Info Section */}
           {selectedButton === "personal" && (
             <motion.div
-              className="text-xl font-semibold flex flex-col gap-6 leading-8"
+              className="lg:text-xl sm:text-base text-sm font-semibold flex flex-col lg:gap-6 sm:gap-4 gap-2 lg:leading-8 sm:leading-6 leading-5 text-justify"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -147,17 +143,9 @@ const About = () => {
                 problems, and constantly learning new things to push myself
                 further.
               </p>
-              {/* <a
-                href="/assets/resume.pdf"
-                download="Anjali's Resume.pdf"
-                className="moving-border w-fit px-4 py-4 flex items-center justify-center gap-3 text-2xl"
-              >
-                <p className=""> Resume</p>
-                <IoIosCloudDownload />
-              </a> */}
               <Link
                 href="/resume"
-                className="moving-border w-fit px-8 py-4 flex items-center justify-center gap-3 text-xl text-[#E0E6ED] my-4 rounded-2xl cursor-pointer"
+                className="moving-border w-fit lg:px-8 px-4 lg:py-4 py-2 flex items-center justify-center gap-3 lg:text-xl sm:text-lg text-base text-[#E0E6ED] lg:my-4 my-2 rounded-2xl cursor-pointer"
               >
                 <p className=""> Resume</p>
                 <IoIosCloudDownload />
@@ -173,8 +161,8 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex gap-16">
-                <div class="h-[380px] w-[1px] bg-white relative ml-2">
+              <div className="flex gap-12">
+                <div class="h-[360px] w-[1px] bg-white relative ml-12">
                   <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                   <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] top-[205px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                 </div>
@@ -227,8 +215,8 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex gap-16 ">
-                <div class="h-[380px] w-[1px] bg-white relative ml-2">
+              <div className="flex gap-12 ">
+                <div class="h-[360px] w-[1px] bg-white relative ml-12">
                   <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                   <div class="w-[11px] h-[11px] rounded-full bg-[#007BFF] absolute -left-[5px] top-[175px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                 </div>
