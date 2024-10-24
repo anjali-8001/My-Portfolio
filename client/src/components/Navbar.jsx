@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <>
       <motion.div
-        className="flex justify-center items-center bg-techy-gradient px-5 py-3 rounded-xl fixed top-4 w-fit self-center mx-4 backdrop-blur-sm shadow-md border border-[#183b60] z-[400]"
+        className="flex justify-center items-center bg-techy-gradient px-5 py-3 rounded-xl fixed top-4 w-fit self-end mx-4 backdrop-blur-sm shadow-md border border-[#183b60] z-[400]"
         initial={{ opacity: 0, scaleX: 0 }} // Initial state for animation
         animate={{ opacity: 1, scaleX: 1 }} // Final state for animation
         exit={{ opacity: 0, scaleX: 0 }} // State when exiting
@@ -69,10 +69,10 @@ const Navbar = () => {
           {isOpen && (
             <motion.div
               ref={navbarRef} // Attach the ref here
-              className="flex sm:flex-row flex-col justify-center  lg:gap-10 sm:gap-6 gap-6 absolute lg:top-24 top-20 rounded-3xl bg-techy-gradient lg:px-16 sm:px-12 px-16 lg:py-5 sm:py-4 py-8 z-50 backdrop-blur-sm shadow-md border border-[#183b60] lg:text-base sm:text-sm text-xs"
-              initial={{ opacity: 0, scaleX: 0, y: -50 }} // Initial state for animation
-              animate={{ opacity: 1, scaleX: 1, y: 0 }} // Final state for animation
-              exit={{ opacity: 0, scaleX: 0, y: -50 }} // Animate while exiting
+              className="flex flex-col justify-center lg:gap-10 sm:gap-6 gap-6 absolute top-20 rounded-3xl right-1 bg-techy-gradient lg:px-16 sm:px-12 px-10 lg:py-10 sm:py-8 py-6 z-50 backdrop-blur-sm shadow-md border border-[#183b60] lg:text-base sm:text-sm text-xs"
+              initial={{ opacity: 0, x: 50 }} // Initial position off-screen
+              animate={{ opacity: 1, x: 0 }} // Animate to visible position
+              exit={{ opacity: 0, x: 50 }} // Animate back off-screen
               transition={{ duration: 0.3 }} // Animation duration
               style={{ transformOrigin: "center" }} // Center expansion
             >

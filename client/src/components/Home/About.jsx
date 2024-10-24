@@ -9,7 +9,7 @@ import { IoIosCloudDownload } from "react-icons/io";
 import Link from "next/link";
 
 const About = () => {
-  const [selectedButton, setSelectedButton] = useState("education");
+  const [selectedButton, setSelectedButton] = useState("personal");
 
   // Animation Variants
   const containerVariants = {
