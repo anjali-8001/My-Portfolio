@@ -2,7 +2,7 @@
 
 My Portfolio web app, built with NextJs and Framer Motion, showcases my skills and projects with sleek animations and intuitive navigation.
 
-Visit: anjali-sharma.vercel.app
+Visit: [anjali-sharma.vercel.app](anjali-sharma.vercel.app)
 
 
 ## Getting Started
