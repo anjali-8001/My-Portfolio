@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import About from "@/components/Home/About";
@@ -18,11 +18,11 @@ export default function Home() {
       setIsLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
-    return <Loader />; 
+    return <Loader />;
   }
 
   return (

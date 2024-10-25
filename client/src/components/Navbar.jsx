@@ -3,13 +3,14 @@ import { useState, useEffect, useRef } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { FaLaptopCode, FaCode, FaFileAlt } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
+import { FaHome } from "react-icons/fa";
+import { IoIosInformationCircle } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navbarRef = useRef(null); // Ref to track the navbar
+  const navbarRef = useRef(null); 
 
-  // Close navbar on clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
@@ -17,20 +18,16 @@ const Navbar = () => {
       }
     };
 
-    // Attach the event listener
     document.addEventListener("mousedown", handleClickOutside);
 
-    // Clean up the event listener on unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  // Effect to manage body scroll
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
-    // Clean up by resetting the overflow when the component unmounts or when isOpen changes
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -40,11 +37,11 @@ const Navbar = () => {
     <>
       <motion.div
         className="flex justify-center items-center bg-techy-gradient px-5 py-3 rounded-xl fixed top-4 w-fit self-end mx-4 backdrop-blur-sm shadow-md border border-[#183b60] z-[400]"
-        initial={{ opacity: 0, scaleX: 0 }} // Initial state for animation
-        animate={{ opacity: 1, scaleX: 1 }} // Final state for animation
-        exit={{ opacity: 0, scaleX: 0 }} // State when exiting
-        transition={{ duration: 0.3 }} // Animation duration
-        style={{ transformOrigin: "center" }} // Center expansion
+        initial={{ opacity: 0, scaleX: 0 }} 
+        animate={{ opacity: 1, scaleX: 1 }} 
+        exit={{ opacity: 0, scaleX: 0 }} 
+        transition={{ duration: 0.3 }} 
+        style={{ transformOrigin: "center" }} 
       >
         {!isOpen && (
           <IoMdMenu
@@ -68,16 +65,34 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              ref={navbarRef} // Attach the ref here
+              ref={navbarRef} 
               className="flex flex-col justify-center lg:gap-10 sm:gap-6 gap-6 absolute top-20 rounded-3xl right-1 bg-techy-gradient lg:px-16 sm:px-12 px-10 lg:py-10 sm:py-8 py-6 z-50 backdrop-blur-sm shadow-md border border-[#183b60] lg:text-base sm:text-sm text-xs"
-              initial={{ opacity: 0, x: 50 }} // Initial position off-screen
-              animate={{ opacity: 1, x: 0 }} // Animate to visible position
-              exit={{ opacity: 0, x: 50 }} // Animate back off-screen
-              transition={{ duration: 0.3 }} // Animation duration
-              style={{ transformOrigin: "center" }} // Center expansion
+              initial={{ opacity: 0, x: 50 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              exit={{ opacity: 0, x: 50 }} 
+              transition={{ duration: 0.3 }} 
+              style={{ transformOrigin: "center" }} 
             >
               <motion.a
-                href="#projects"
+                href="/#home"
+                className="cursor-pointer flex gap-2 items-center"
+                onClick={() => setIsOpen(false)}
+                whileHover={{ scale: 1.1 }}
+              >
+                <FaHome />
+                <span>HOME</span>
+              </motion.a>
+              <motion.a
+                href="/#about"
+                className="cursor-pointer flex gap-2 items-center"
+                onClick={() => setIsOpen(false)}
+                whileHover={{ scale: 1.1 }}
+              >
+                <IoIosInformationCircle />
+                <span>ABOUT</span>
+              </motion.a>
+              <motion.a
+                href="/#projects"
                 className="cursor-pointer flex gap-2 items-center"
                 onClick={() => setIsOpen(false)}
                 whileHover={{ scale: 1.1 }}
@@ -86,7 +101,7 @@ const Navbar = () => {
                 <span>PROJECTS</span>
               </motion.a>
               <motion.a
-                href="#skills"
+                href="/#skills"
                 className="cursor-pointer flex gap-2 items-center"
                 onClick={() => setIsOpen(false)}
                 whileHover={{ scale: 1.1 }}
@@ -95,7 +110,7 @@ const Navbar = () => {
                 <span>SKILLS</span>
               </motion.a>
               <motion.a
-                href="#contact"
+                href="/#contact"
                 className="cursor-pointer flex gap-2 items-center"
                 onClick={() => setIsOpen(false)}
                 whileHover={{ scale: 1.1 }}

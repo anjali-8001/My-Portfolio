@@ -52,7 +52,7 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
       >
         <h1 className="lg:text-5xl sm:text-3xl text-xl lg:leading-[70px] sm:leading-10 lg mr-8 font-semibold">
-          Let&apos;{" "}
+          Let&apos;s{" "}
           <span
             className=""
             style={{
@@ -66,7 +66,7 @@ const Contact = () => {
           . <p className="">Tell me about your project!</p>
         </h1>
         <div className="text-[#7ea0c7] lg:text-2xl sm:text-xl text-base">
-          Let&apos; create something together ✌️
+          Let&apos;s create something together ✌️
         </div>
         <div className="flex gap-5 items-center">
           <motion.div whileHover={{ scale: 1.1 }}>

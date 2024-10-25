@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col sm:gap-5 gap-3 w-full lg:px-28 sm:px-14 px-6 lg:py-10 sm:py-8 py-6 lg:text-lg sm:text-sm text-xs">
+    <div className="flex flex-col sm:gap-5 gap-3 w-full lg:px-28 sm:px-14 px-6 lg:py-10 sm:py-6 py-4 lg:text-lg sm:text-sm text-xs">
       <hr />
       <div className="flex sm:flex-row flex-col justify-between items-center gap-2">
         <div className="flex flex-col gap-4">
