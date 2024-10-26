@@ -9,9 +9,14 @@ import SKills from "@/components/Home/SKills";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+
+  const getUser = async () => {
+    const res = await axios.post("/api/user");
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,6 +24,10 @@ export default function Home() {
     }, 1000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    getUser();
   }, []);
 
   if (isLoading) {
